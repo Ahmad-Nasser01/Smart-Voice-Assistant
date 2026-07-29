@@ -1,2 +1,18 @@
-# Smart-Voice-Assistant
-A secure, bilingual (Arabic/English) AI voice and text assistant built with Flask, Python, and Cohere AI, featuring chat history and interactive UI components.
+# 🎙️ Smart Voice & Text AI Assistant
+
+مساعد ذكي تفاعلي يدعم اللغتين العربية والإنجليزية، مبني باستخدام **Flask (Python)** وواجهة تفاعلية حديثة، ومربوط بـ **Cohere AI API**.
+
+## 🚀 مميزات المشروع
+- دعم كامل للغة العربية والإنجليزية بدقة عالية.
+- ذاكرة محادثة مستمرة (Chat History) لمتابعة السياق.
+- مؤشر تفكير تفاعلي (`...`) وزر للإيقاف الفوري للصوت (🛑).
+- أمان عالٍ عبر عزل المفاتيح السرية باستخدام متغيرات البيئة (`.env`).
+
+---
+
+## ⚙️ طريقة التشغيل والتثبيت
+
+1. **استنساخ المستودع أو تحميله:**
+   ```bash
+   git clone [https://github.com/اسم_حسابك/Smart-Voice-Assistant.git](https://github.com/اسم_حسابك/Smart-Voice-Assistant.git)
+   cd Smart-Voice-Assistant
