@@ -1,5 +1,7 @@
 # 🎙️ Smart Voice & Text AI Assistant
 
+🔗 **Live Demo:** [Click here to test the live application directly](https://smart-voice-assistant-yhyp.onrender.com)
+
 A modern, secure, bilingual (Arabic/English) AI voice and text assistant built with **Flask (Python)**, integrated with the official **Cohere AI API**, featuring real-time conversation history and a sleek interactive user interface.
 
 ## 🚀 Features
