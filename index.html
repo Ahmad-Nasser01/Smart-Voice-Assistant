@@ -237,7 +237,6 @@
         }
         messageDiv.textContent = text;
         
-        // التأكد من أن مؤشر التفكير دائماً في الأسفل إذا كان ظاهراً
         chatMessages.insertBefore(messageDiv, typingIndicator);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
@@ -274,9 +273,7 @@
 
         micButton.addEventListener('click', () => {
             try {
-                // إيقاف أي صوت سابق تلقائياً عند بدء تسجيل جديد
                 window.speechSynthesis.cancel();
-                
                 recognition.lang = currentLang;
                 recognition.start();
                 micButton.classList.add('listening');
@@ -288,7 +285,6 @@
         recognition.onresult = (event) => {
             const speechText = event.results[0][0].transcript;
             micButton.classList.remove('listening');
-            
             addMessage(speechText, 'user');
             sendToBackend(speechText);
         };
@@ -305,20 +301,19 @@
     }
 
     async function sendToBackend(text) {
-        // إظهار مؤشر التفكير وتحريكه لأسفل القائمة
         chatMessages.appendChild(typingIndicator);
         typingIndicator.style.display = 'flex';
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/chat', {
+            // استخدام مسار نسبى (/api/chat) ليعمل على الرابط المحلي أو على خادم Render الحي تلقائياً
+            const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: text })
             });
             const data = await response.json();
             
-            // إخفاء مؤشر التفكير عند وصول الرد
             typingIndicator.style.display = 'none';
             
             if (data.status === 'success') {
@@ -328,16 +323,13 @@
                 addMessage(data.message, 'error');
             }
         } catch (err) {
-            // إخفاء مؤشر التفكير عند حدوث خطأ
             typingIndicator.style.display = 'none';
             addMessage('حدث خطأ أثناء الاتصال بالخادم.', 'error');
         }
     }
 
     function speakText(text) {
-        // نوقف أي صوت سابق قبل البدء بنطق الرد الجديد
         window.speechSynthesis.cancel();
-        
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = /[a-zA-Z]/.test(text) ? 'en-US' : 'ar-SA';
         window.speechSynthesis.speak(utterance);
