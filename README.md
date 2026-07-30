@@ -14,5 +14,5 @@ A modern, secure, bilingual (Arabic/English) AI voice and text assistant built w
 
 1. **Clone the repository:**
    ```bash
-  git clone https://github.com/Ahmad-Nasser01/Smart-Voice-Assistant.git
-cd Smart-Voice-Assistant
+   git clone [https://github.com/Ahmad-Nasser01/Smart-Voice-Assistant.git](https://github.com/Ahmad-Nasser01/Smart-Voice-Assistant.git)
+   cd Smart-Voice-Assistant
