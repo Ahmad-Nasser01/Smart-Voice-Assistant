@@ -10,9 +10,10 @@ A modern, secure, bilingual (Arabic/English) AI voice and text assistant built w
 
 ---
 
-## ⚙️ Installation & Setup Guide
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Ahmad-Nasser01/Smart-Voice-Assistant.git](https://github.com/Ahmad-Nasser01/Smart-Voice-Assistant.git)
-   cd Smart-Voice-Assistant
+## 📂 Project Structure
+```text
+Smart-Voice-Assistant/
+├── app.py           # Flask backend server
+├── index.html       # Frontend web interface
+├── requirements.txt # Python dependencies
+└── .env             # Environment variables (To be created by the user)
